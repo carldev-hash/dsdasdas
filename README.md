@@ -1,15 +1,16 @@
-```mermaid
 erDiagram
     CATEGORY {
         int CATEGORY_ID PK
         varchar CNAME
     }
+
     CUSTOMER {
         int CUST_ID PK
         varchar FIRST_NAME
         varchar LAST_NAME
         varchar PHONE_NUMBER
     }
+
     EMPLOYEE {
         int EMPLOYEE_ID PK
         varchar FIRST_NAME
@@ -21,15 +22,18 @@ erDiagram
         varchar HIRED_DATE
         int LOCATION_ID FK
     }
+
     JOB {
         int JOB_ID PK
         varchar JOB_TITLE
     }
+
     LOCATION {
         int LOCATION_ID PK
         varchar PROVINCE
         varchar CITY
     }
+
     PRODUCT {
         int PRODUCT_ID PK
         varchar PRODUCT_CODE
@@ -42,12 +46,14 @@ erDiagram
         int SUPPLIER_ID FK
         varchar DATE_STOCK_IN
     }
+
     SUPPLIER {
         int SUPPLIER_ID PK
         varchar COMPANY_NAME
         int LOCATION_ID FK
         varchar PHONE_NUMBER
     }
+
     TRANSACTION {
         int TRANS_ID PK
         int CUST_ID FK
@@ -61,6 +67,7 @@ erDiagram
         varchar DATE
         varchar TRANS_D_ID "Note: Type mismatch with TRANSACTION_DETAILS.TRANS_D_ID"
     }
+
     TRANSACTION_DETAILS {
         int ID PK
         varchar TRANS_D_ID FK "Links to TRANSACTION.TRANS_ID (Type inconsistency: varchar vs int)"
@@ -70,10 +77,12 @@ erDiagram
         varchar EMPLOYEE "Could be FK to EMPLOYEE_ID if stores ID, currently varchar"
         varchar ROLE
     }
+
     TYPE {
         int TYPE_ID PK
         varchar TYPE
     }
+
     USERS {
         int ID PK
         int EMPLOYEE_ID FK
